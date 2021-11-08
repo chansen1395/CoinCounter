@@ -29,7 +29,7 @@ import './App.css';
       if (change >= .01) {
         changeArray.push( Math.floor(change / .01));
       }
-      return changeArray;
+      return `nickels: ${changeArray[0]}, pennies: ${changeArray[1]}`;
     }
     
 

@@ -8,6 +8,10 @@ describe ('coinCounter', () => {
   })
 
   test('It should correctly give the change for given amount', () => {
-    expect(coinCounter(.56)).toEqual([56]);
+    expect(coinCounter(.56)).toEqual("pennies: 56");
+  })
+
+  test('It should correctly give the change for given amount with nickels and pennies', () => {
+    expect(coinCounter(.07)).toEqual("nickels: 1, pennies: 2");
   })
 });
