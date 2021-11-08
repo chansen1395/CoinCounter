@@ -3,15 +3,25 @@
 import coinCounter from './App';
 
 describe ('coinCounter', () => {
+
+  let reusableCoinCounter;
+  const changeArray = [0,0,0,0];
+  // const changeArray = [
+  // {'quarters: '0,0,0,0];
+  //
+  //
+  //
+  //
+  beforeEach(() => {
+    reusableCoinCounter = coinCounter(.67, changeArray, 0);
+  });
+
   test('It should return not a number', () => {
-    expect(coinCounter("hello")).toEqual("is not a number");
+    expect(coinCounter("hello", changeArray, 0)).toEqual("is not a number");
   })
 
   test('It should correctly give the change for given amount', () => {
-    expect(coinCounter(.56)).toEqual("pennies: 56");
+    expect(reusableCoinCounter).toEqual("quarters: 2, dimes: 1, nickels: 1, pennies: 2");
   })
 
-  test('It should correctly give the change for given amount with nickels and pennies', () => {
-    expect(coinCounter(.07)).toEqual("nickels: 1, pennies: 2");
-  })
 });
