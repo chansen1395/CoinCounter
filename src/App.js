@@ -11,11 +11,11 @@ import './App.css';
 
   
   export default function coinCounter(change) {
-    // let changeArray = [];
+    let changeArray = [];
     if (isNaN(change) || change === 0) {
       return "is not a number";
     } 
-    // else {
+    else {
       // if (change >= .10) {
       //   changeArray.push(change / .10);
       //   change = change % .10;
@@ -26,15 +26,12 @@ import './App.css';
       //   change = change % .05;
       //   return coinCounter(change);
       // }
-      // if (change >= .01) {
-      //   changeArray.push(change / .01);
-      // }
-  
-    // }
-    // return changeArray;
-    else {
-      return change;
+      if (change >= .01) {
+        changeArray.push( Math.floor(change / .01));
+      }
+      return changeArray;
     }
+    
 
 
 
