@@ -1,12 +1,16 @@
 import './App.css';
  
 export default function coinCounter(change, changeArray, counter) {
+  console.log("Change: " + change);
   const denominations = [.25, .10, .05, .01];
+  // const denominations = [25, 10, 5, 1];
+  // const changeRounded = parseInt((change * 100).toFixed(0));
+  // console.log("changeRounded: " + changeRounded);
+  // console.log("changeRounded: " + typeof changeRounded);
+  // console.log("change: " + typeof change);
+  
   let incCounter = counter + 1;
-  console.log("Counter: " + counter + ", Counter++: " + incCounter);
-  console.log("changearray: " + changeArray[counter]);
-  console.log("denomsarray: " + denominations[counter]);
-
+  
   if (isNaN(change) || change === 0) {
     return "is not a number";
   } 
@@ -16,11 +20,12 @@ export default function coinCounter(change, changeArray, counter) {
         changeArray[counter] = (Math.round(change / denominations[counter]));
       } 
       else {
+        // changeArray[counter] = (changeRounded / denominations[counter]);
         changeArray[counter] = (Math.floor(change / denominations[counter]));
       }
       return coinCounter((change % denominations[counter]), changeArray, incCounter);
     }
-    else if (counter <= 3) {
+    else if (counter <= denominations.Length) {
       return coinCounter(change, changeArray, incCounter)
     }
 
