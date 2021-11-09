@@ -2,7 +2,7 @@
 // import App from './App';
 import coinCounter from './App';
 import coinCounter2 from './App';
-import {multiplier} from './App';
+// import {multiplier} from './App';
 import {doubler} from './App';
 import {tripler} from './App';
 import {quadrupler} from './App';
