@@ -32,4 +32,15 @@ export default function coinCounter(change, changeArray, counter) {
     return `quarters: ${changeArray[0]}, dimes: ${changeArray[1]}, nickels: ${changeArray[2]}, pennies: ${changeArray[3]}`;
   }
 }
+
+// Using Closures
+export const multiplier = (numberToMultiplyBy) => {
+  return (numberToMultiply) => {
+    return numberToMultiplyBy * numberToMultiply;
+  }
+}
+
+export const doubler = multiplier(2);
+export const tripler = multiplier(3);
+export const quadrupler = multiplier(4);
         
